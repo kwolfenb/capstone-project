@@ -1,14 +1,10 @@
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'PLAYER_CLICK':
-      const { boxId, filled, letter, value } = action;
-      let newState = Object.assign({}, state, {
-        value: value,
-        [boxId]: {
-          filled: filled,
-          letter: letter,
-        }
-      });
+    case 'CHOOSE_COLOR':
+      const { color } = action;
+      let newState = {
+        color: color,
+      };
       return newState;
 
     default:
@@ -17,5 +13,5 @@ export default (state = initialState, action) => {
 };
 
 let initialState = {
-  prop: 'test'
+  color1: ''
 }
