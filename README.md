@@ -33,7 +33,7 @@ _Web application takes user input to generate a 5-color scheme and apply it to w
 
 ## Page Layout Design
 
-![Page Layout Design](src/assets/images/layoutUpdated.jpg?raw=true "Page Layout Design")
+![Page Layout Design](/capstone-project-planning/project-plan.jpg?raw=true "Page Layout Design")
 
 
 ## Technologies Used
