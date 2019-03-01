@@ -1,0 +1,19 @@
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+.headerButtons {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.headerButtons h6 {
+  background: gray;
+  width: 75%;
+  margin: 2px;
+  border-radius: 2px;
+}
