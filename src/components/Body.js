@@ -1,22 +1,32 @@
 import React from 'react';
-import ChooseColor from './ChooseColor'
-import ChoosePicture from './ChoosePicture'
-import ColorScheme from './ColorScheme'
+import ChooseColor from './ChooseColor';
+import ChoosePicture from './ChoosePicture';
+import ColorScheme from './ColorScheme';
+import Template1 from './Template1';
+import Template2 from './Template2';
 import './Body.css';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 function Body() {
 
   return (
     <div>
-      <div className='bodyRow'>
-        <div className='bodyCol'>
-          <ChooseColor />
+      <div>
+
+        <div className='bodyRow'>
+          <div className='bodyCol'>
+            <ChooseColor />
+          </div>
+          <div className='bodyCol'>
+            <ChoosePicture />
+          </div>
         </div>
-        <div className='bodyCol'>
-          <ChoosePicture />
-        </div>
+        <ColorScheme />
       </div>
-      <ColorScheme />
+      <div>
+        <Template1 />
+        <Template2 />
+      </div>
     </div >
   )
 

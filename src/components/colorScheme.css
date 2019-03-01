@@ -1,0 +1,25 @@
+.colorScheme {
+  text-align: center;
+}
+.colors{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#color1 {
+  height: 150px;
+  background: slateblue;
+}
+#color2 {
+  background: blue;
+}
+#color3 {
+  background: slategrey;
+}
+#color4 {
+  background: skyblue;
+}
+#color5 {
+  background: darkblue;
+}
+
