@@ -46,7 +46,7 @@ function Template1() {
     `}
     </style>
       <div className='templateHeader'>
-        <h4>Template Header</h4>
+        <h4>Template 1 Header</h4>
         </div>
         <div className='templateRow'>
           <div className='templateCol'>

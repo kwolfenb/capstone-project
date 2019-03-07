@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from './Header';
 import Body from './Body';
+import Template1 from './Template1';
+import Template2 from './Template2';
 
 import {   BrowserRouter as Router, Route,  Link } from 'react-router-dom'
 
@@ -11,8 +12,9 @@ class App extends React.Component {
       <Router >
 
         <div className="App">
-        <Route exact path='/' component={Header}></Route>
-        <Route path='/body' component={Body}></Route>
+        <Route exact path='/' component={Body}></Route>
+        <Route path='/template1' component={Template1}></Route>
+        <Route path='/template2' component={Template2}></Route>
           
         </div>
       </Router>

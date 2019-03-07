@@ -1,16 +1,18 @@
 import React from 'react';
+import Header from './Header';
 import ChooseColor from './ChooseColor';
 import ChoosePicture from './ChoosePicture';
 import ColorScheme from './ColorScheme';
-import Template1 from './Template1';
-import Template2 from './Template2';
-import './Body.css';
+import Templates from './Templates';
+
+import './styles/Body.css';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
 function Body() {
 
   return (
     <div>
+      <Header />
       <div>
 
         <div className='bodyRow'>
@@ -24,8 +26,8 @@ function Body() {
         <ColorScheme />
       </div>
       <div>
-        <Template1 />
-        <Template2 />
+        <h2>Templates go here</h2>
+        <Templates />
       </div>
     </div >
   )

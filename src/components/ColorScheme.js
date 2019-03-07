@@ -1,5 +1,5 @@
 import React from 'react';
-import './colorScheme.css'
+import './styles/colorScheme.css'
 
 function ColorScheme() {
 

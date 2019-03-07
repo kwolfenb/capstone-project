@@ -1,9 +1,10 @@
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'CHOOSE_COLOR':
-      const { color1 } = action;
+      const { primaryColor, secondaryColor } = action;
       let newState = {
-        color1: color1,
+        primaryColor: primaryColor,
+        secondaryColor: secondaryColor
       };
       return newState;
 
