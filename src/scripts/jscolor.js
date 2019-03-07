@@ -602,6 +602,7 @@ var jsc = {
 				jsc.onDocumentPointerEnd(e, target, controlName, pointerType));
 		};
 
+		
 		registerDragEvents(document, [0, 0]);
 
 		if (window.parent && window.frameElement) {
@@ -635,6 +636,8 @@ var jsc = {
 		jsc.dispatchFineChange(thisObj);
 	},
 
+
+	
 
 	onDocumentPointerMove : function (e, target, controlName, pointerType, offset) {
 		return function (e) {
@@ -1822,6 +1825,7 @@ var jsc = {
 	}
 
 };
+
 
 
 //================================
