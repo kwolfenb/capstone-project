@@ -13,7 +13,7 @@ export const chooseColor = (primaryColor, secondaryColor, primaryName, secondary
         error => console.log('An error occurred', error))
     .then(function(json) {
         if (json) {
-            return(json.name.value);
+            return([json.name.value, json.rgb]);
         } else {
             console.log('error');
         }

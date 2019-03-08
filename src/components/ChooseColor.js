@@ -24,6 +24,7 @@ function ChooseColor(props) {
     for (let c of colors) {
       let promise = new Promise(
         (resolve, reject) => {
+          let resultArr = fetchColorName(c);
           let colorName = fetchColorName(c);
         resolve(colorName);
       });
