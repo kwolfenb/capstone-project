@@ -5,7 +5,7 @@ import './../scripts/colorPicker.js';
 import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
 import { fontColor } from './../actions';
-import { fetchColorScheme } from './../actions';
+import { setColorScheme } from './../actions';
 
 const mapStateToProps = state => {
   return {
@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 function ChooseColor(props) {
   let primaryColor;
   let secondaryColor;
-  let colorScheme;
+  // let colorScheme;
 
   function handleChooseColor(event) {
     const { dispatch } = props;
@@ -51,35 +51,35 @@ function ChooseColor(props) {
     })
   }
 
-  function handleClick() {
-    console.log('click')
-    let promise = new Promise(
-      (resolve, reject) => {
-        let result = false;
-        result = fetchColorScheme();
-        if (result) {
-          resolve(result);
-        }
-        if (!result) {
-          reject(result);
-        }
-      });
-    promise.then((colorScheme) => {
-      console.log('it worked');
-      console.log(colorScheme);
-    })
-      .catch((colorScheme) => {
-        console.log('broked')
-      })
-}
+  function fetchColorScheme() {
+    const { dispatch } = props;
+    let rgb1 = props.state.primaryColor.rgb;
+    let rgb2 = props.state.secondaryColor.rgb;
+    let url = 'http://colormind.io/api/';
+    let data = {
+      model: 'default',
+      input: [[rgb1.r, rgb1.g, rgb1.b], [rgb2.r, rgb2.g, rgb2.b], "N", "N", "N"]
+    }
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+      if (http.readyState === 4 && http.status === 200) {
+        let palette = JSON.parse(http.responseText).result;
+        console.log(palette)
+        dispatch(setColorScheme(palette))
+      }
+    }
+    http.open('POST', url, true)
+    http.send(JSON.stringify(data))
+  }
 
 
 
 
 
-return (
-  <div>
-    <style>{`
+
+  return (
+    <div>
+      <style>{`
         .primaryColor {
           text-align: center;
           background-color: #${props.state.primaryColor.hex};
@@ -97,33 +97,33 @@ return (
 
         }
       `}</style>
-    <h3 onClick={handleClick}>Choose Color works</h3>
-    <form onSubmit={handleChooseColor}>
+      <h3 onClick={fetchColorScheme}>Choose Color works</h3>
+      <form onSubmit={handleChooseColor}>
 
-      <button className="jscolor {valueElement:'primary-chosen-value'}">
-        Pick text color
+        <button className="jscolor {valueElement:'primary-chosen-value'}">
+          Pick text color
 	      </button>
 
-      HEX value:
+        HEX value:
         <input id="primary-chosen-value"
-        ref={(input) => { primaryColor = input; }} /> <br />
+          ref={(input) => { primaryColor = input; }} /> <br />
 
-      <button className="jscolor {valueElement:'secondary-chosen-value'}">
-        Pick text color
+        <button className="jscolor {valueElement:'secondary-chosen-value'}">
+          Pick text color
 	      </button>
 
-      HEX value:
+        HEX value:
         <input id="secondary-chosen-value"
-        ref={(input) => { secondaryColor = input; }} /> <br />
-      <button type='submit'>Submit</button>
+          ref={(input) => { secondaryColor = input; }} /> <br />
+        <button type='submit'>Submit</button>
 
-    </form>
+      </form>
 
-    <p className="primaryColor">Primary Color: {props.state.primaryColor.name}</p>
-    <p className="secondaryColor">Secondary Color: {props.state.secondaryColor.name}</p>
-  </div>
+      <p className="primaryColor">Primary Color: {props.state.primaryColor.name}</p>
+      <p className="secondaryColor">Secondary Color: {props.state.secondaryColor.name}</p>
+    </div>
 
-)
+  )
 
 }
 
