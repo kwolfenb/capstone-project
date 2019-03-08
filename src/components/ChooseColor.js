@@ -4,6 +4,7 @@ import './../scripts/jscolor.js';
 import './../scripts/colorPicker.js';
 import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
+import { fontColor } from './../actions'
 
 const mapStateToProps = state => {
   return {
@@ -15,6 +16,8 @@ const mapStateToProps = state => {
 function ChooseColor(props) {
   let primaryColor;
   let secondaryColor;
+  let primaryTextColor;
+  let secondaryTextColor
 
   function handleChooseColor (event) {
     const { dispatch } = props;
@@ -24,8 +27,6 @@ function ChooseColor(props) {
     for (let c of colors) {
       let promise = new Promise(
         (resolve, reject) => {
-          // let resultArr = fetchColorName(c);
-          // let colorName = fetchColorName(c);
           let result = fetchColorName(c)
         resolve(result);
       });
@@ -33,20 +34,21 @@ function ChooseColor(props) {
     }
 
     Promise.all(promises).then((color) => {
-      console.log(color[0], color[1])
-      dispatch(chooseColor(
-        primaryColor.value, 
-        secondaryColor.value, 
-        color[0].name.value, 
-        color[1].name.value, 
-        [color[0].rgb.r, 
-        color[0].rgb.g, 
-        color[0].rgb.b], 
-        [color[1].rgb.r, 
-        color[1].rgb.g, 
-        color[1].rgb.b]))
+      if(color[0] && color[1]) {
+        console.log(color[0], color[1])
+        dispatch(chooseColor(
+          primaryColor.value, 
+          secondaryColor.value, 
+          color[0].name.value, 
+          color[1].name.value, 
+          [color[0].rgb.r, color[0].rgb.g, color[0].rgb.b], 
+          [color[1].rgb.r, color[1].rgb.g, color[1].rgb.b]))
+        }
+      fontColor(color[0])  
     })
   }
+  
+
 
 
   return(

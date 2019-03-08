@@ -21,3 +21,8 @@ export function fetchColorName(hexCode) {
             }
         })
 }
+
+export function fontColor(color) {
+    let result = ((color.rgb.r * .299) + (color.rgb.g * .587) + (color.rgb.b * .114))
+    console.log(result)
+}

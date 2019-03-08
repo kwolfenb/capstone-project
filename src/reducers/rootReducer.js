@@ -6,12 +6,20 @@ export default (state = initialState, action) => {
         primaryColor: {
           hex: primaryColor,
           name: primaryName,
-          rgb: primaryRGB
+          rgb: {
+            r: primaryRGB[0],
+            g: primaryRGB[1],
+            b: primaryRGB[2],
+          }
         },
         secondaryColor: {
           hex: secondaryColor,
           name: secondaryName,
-          rgb: secondaryRGB
+          rgb: {
+            r: secondaryRGB[0],
+            g: secondaryRGB[1],
+            b: secondaryRGB[2],
+          }
         }
       };
       return newState;
