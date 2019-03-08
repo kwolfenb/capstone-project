@@ -4,7 +4,8 @@ import './../scripts/jscolor.js';
 import './../scripts/colorPicker.js';
 import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
-import { fontColor } from './../actions'
+import { fontColor } from './../actions';
+import { fetchColorScheme } from './../actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,9 +17,9 @@ const mapStateToProps = state => {
 function ChooseColor(props) {
   let primaryColor;
   let secondaryColor;
+  let colorScheme;
 
-
-  function handleChooseColor (event) {
+  function handleChooseColor(event) {
     const { dispatch } = props;
     event.preventDefault();
     let colors = [primaryColor.value, secondaryColor.value]
@@ -27,35 +28,58 @@ function ChooseColor(props) {
       let promise = new Promise(
         (resolve, reject) => {
           let result = fetchColorName(c)
-        resolve(result);
-      });
+          resolve(result);
+        });
       promises.push(promise);
     }
 
     Promise.all(promises).then((color) => {
-      if(color[0] && color[1]) {
+      if (color[0] && color[1]) {
         console.log(color[0], color[1])
         let primaryTextColor = fontColor(color[0]);
         let secondaryTextColor = fontColor(color[1]);
         dispatch(chooseColor(
-          primaryColor.value, 
-          secondaryColor.value, 
-          color[0].name.value, 
-          color[1].name.value, 
-          [color[0].rgb.r, color[0].rgb.g, color[0].rgb.b], 
+          primaryColor.value,
+          secondaryColor.value,
+          color[0].name.value,
+          color[1].name.value,
+          [color[0].rgb.r, color[0].rgb.g, color[0].rgb.b],
           [color[1].rgb.r, color[1].rgb.g, color[1].rgb.b],
           primaryTextColor,
           secondaryTextColor))
-        }
+      }
     })
   }
-  
+
+  function handleClick() {
+    console.log('click')
+    let promise = new Promise(
+      (resolve, reject) => {
+        let result = false;
+        result = fetchColorScheme();
+        if (result) {
+          resolve(result);
+        }
+        if (!result) {
+          reject(result);
+        }
+      });
+    promise.then((colorScheme) => {
+      console.log('it worked');
+      console.log(colorScheme);
+    })
+      .catch((colorScheme) => {
+        console.log('broked')
+      })
+}
 
 
 
-  return(
-    <div>
-      <style>{`
+
+
+return (
+  <div>
+    <style>{`
         .primaryColor {
           text-align: center;
           background-color: #${props.state.primaryColor.hex};
@@ -73,32 +97,33 @@ function ChooseColor(props) {
 
         }
       `}</style>
-      <h3>Choose Color works</h3>
-      <form onSubmit={handleChooseColor}>
+    <h3 onClick={handleClick}>Choose Color works</h3>
+    <form onSubmit={handleChooseColor}>
 
-        <button className="jscolor {valueElement:'primary-chosen-value'}">
-		      Pick text color
+      <button className="jscolor {valueElement:'primary-chosen-value'}">
+        Pick text color
 	      </button>
-        
-        HEX value: 
-        <input id="primary-chosen-value" 
-          ref={(input) => {primaryColor=input;}}/> <br />
 
-        <button className="jscolor {valueElement:'secondary-chosen-value'}">
-		      Pick text color
+      HEX value:
+        <input id="primary-chosen-value"
+        ref={(input) => { primaryColor = input; }} /> <br />
+
+      <button className="jscolor {valueElement:'secondary-chosen-value'}">
+        Pick text color
 	      </button>
-        
-        HEX value: 
-        <input id="secondary-chosen-value" 
-          ref={(input) => {secondaryColor=input;}}/> <br />
-        <button type='submit'>Submit</button>
 
-      </form>
+      HEX value:
+        <input id="secondary-chosen-value"
+        ref={(input) => { secondaryColor = input; }} /> <br />
+      <button type='submit'>Submit</button>
 
-      <p className="primaryColor">Primary Color: {props.state.primaryColor.name}</p>
-      <p className="secondaryColor">Secondary Color: {props.state.secondaryColor.name}</p>
-    </div>
-  )
+    </form>
+
+    <p className="primaryColor">Primary Color: {props.state.primaryColor.name}</p>
+    <p className="secondaryColor">Secondary Color: {props.state.secondaryColor.name}</p>
+  </div>
+
+)
 
 }
 
