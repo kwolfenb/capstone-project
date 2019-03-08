@@ -1,15 +1,17 @@
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'CHOOSE_COLOR':
-      const { primaryColor, secondaryColor, primaryName, secondaryName } = action;
+      const { primaryColor, secondaryColor, primaryName, secondaryName, primaryRGB, secondaryRGB } = action;
       let newState = {
         primaryColor: {
           hex: primaryColor,
-          name: primaryName
+          name: primaryName,
+          rgb: primaryRGB
         },
         secondaryColor: {
           hex: secondaryColor,
-          name: secondaryName
+          name: secondaryName,
+          rgb: secondaryRGB
         }
       };
       return newState;
@@ -25,7 +27,7 @@ let initialState = {
     name: 'white'
   },
   secondaryColor: {
-    hex: '000000',
-    name: 'black'
+    hex: 'FFFFFF',
+    name: 'white'
   }
 }

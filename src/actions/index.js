@@ -1,21 +1,23 @@
-export const chooseColor = (primaryColor, secondaryColor, primaryName, secondaryName) => ({
+export const chooseColor = (primaryColor, secondaryColor, primaryName, secondaryName, primaryRGB, secondaryRGB) => ({
     type: 'CHOOSE_COLOR',
     primaryColor,
     secondaryColor,
-    primaryName, 
-    secondaryName
-  });
+    primaryName,
+    secondaryName,
+    primaryRGB,
+    secondaryRGB
+});
 
-  export function fetchColorName(hexCode) {
+export function fetchColorName(hexCode) {
     console.log(hexCode);
     return fetch(`http://thecolorapi.com/id?hex=${hexCode}`)
-    .then(response => response.json(),
-        error => console.log('An error occurred', error))
-    .then(function(json) {
-        if (json) {
-            return([json.name.value, json.rgb]);
-        } else {
-            console.log('error');
-        }
-    })
-  }
+        .then(response => response.json(),
+            error => console.log('An error occurred', error))
+        .then(function (json) {
+            if (json) {
+                return (json);
+            } else {
+                console.log('error');
+            }
+        })
+}
