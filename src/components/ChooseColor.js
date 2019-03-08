@@ -16,8 +16,7 @@ const mapStateToProps = state => {
 function ChooseColor(props) {
   let primaryColor;
   let secondaryColor;
-  let primaryTextColor;
-  let secondaryTextColor
+
 
   function handleChooseColor (event) {
     const { dispatch } = props;
@@ -36,15 +35,18 @@ function ChooseColor(props) {
     Promise.all(promises).then((color) => {
       if(color[0] && color[1]) {
         console.log(color[0], color[1])
+        let primaryTextColor = fontColor(color[0]);
+        let secondaryTextColor = fontColor(color[1]);
         dispatch(chooseColor(
           primaryColor.value, 
           secondaryColor.value, 
           color[0].name.value, 
           color[1].name.value, 
           [color[0].rgb.r, color[0].rgb.g, color[0].rgb.b], 
-          [color[1].rgb.r, color[1].rgb.g, color[1].rgb.b]))
+          [color[1].rgb.r, color[1].rgb.g, color[1].rgb.b],
+          primaryTextColor,
+          secondaryTextColor))
         }
-      fontColor(color[0])  
     })
   }
   
@@ -59,14 +61,17 @@ function ChooseColor(props) {
           background-color: #${props.state.primaryColor.hex};
           width: 50%;
           height: 150px;
+          color: #${props.state.primaryColor.font};
+
         }
         .secondaryColor {
           text-align: center;
           height: 150px;
           width: 50%;
           background-color: #${props.state.secondaryColor.hex};
-        }
+          color: #${props.state.secondaryColor.font};
 
+        }
       `}</style>
       <h3>Choose Color works</h3>
       <form onSubmit={handleChooseColor}>
