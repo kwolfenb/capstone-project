@@ -72,11 +72,6 @@ function ChooseColor(props) {
     http.send(JSON.stringify(data))
   }
 
-
-
-
-
-
   return (
     <div>
       <style>{`
@@ -97,7 +92,7 @@ function ChooseColor(props) {
 
         }
       `}</style>
-      <h3 onClick={fetchColorScheme}>Choose Color works</h3>
+      <h3>Choose Color works</h3>
       <form onSubmit={handleChooseColor}>
 
         <button className="jscolor {valueElement:'primary-chosen-value'}">

@@ -2,7 +2,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'CHOOSE_COLOR':
       const { primaryColor, secondaryColor, primaryName, secondaryName, primaryRGB, secondaryRGB, primaryFont, secondaryFont } = action;
-      let newState = {
+      let newState = Object.assign({}, state, {
         primaryColor: {
           hex: primaryColor,
           name: primaryName,
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
           },
           font: secondaryFont
         }
-      };
+      });
       return newState;
     case 'COLOR_SCHEME': 
       const { colorScheme } = action;
@@ -44,5 +44,7 @@ let initialState = {
   secondaryColor: {
     hex: 'FFFFFF',
     name: 'white'
-  }
+  },
+  colorScheme: [[255, 0, 0], [0, 255, 0], [0, 0, 255], [2, 3, 6], [7, 3, 1]]
+
 }
