@@ -27,7 +27,7 @@ export default (state = initialState, action) => {
       return newState;
     case 'COLOR_SCHEME': 
       const { colorScheme } = action;
-      let newPalette = Object.assign(state, {
+      let newPalette = Object.assign({}, state, {
         colorScheme: colorScheme
       })
       return newPalette;
@@ -45,6 +45,7 @@ let initialState = {
     hex: 'FFFFFF',
     name: 'white'
   },
-  colorScheme: [[255, 0, 0], [0, 255, 0], [0, 0, 255], [2, 3, 6], [7, 3, 1]]
+  colorScheme: [[195, 0, 0], [0, 255, 0], [0, 0, 255], [2, 3, 6], [7, 3, 1]],
+  colorsPicked: false,
 
 }
