@@ -37,7 +37,6 @@ function ColorScheme(props) {
     http.send(JSON.stringify(data))
   }
 
-  console.log(props.state.colorScheme[0])
   return(
     <div className='colorScheme'>
       <style>
@@ -51,7 +50,7 @@ function ColorScheme(props) {
           #color3 {
             background: rgb(${props.state.colorScheme[1][0]}, ${props.state.colorScheme[2][1]}, ${props.state.colorScheme[2][2]});
           }
-          #color5 {
+          #color4 {
             background: rgb(${props.state.colorScheme[3][0]}, ${props.state.colorScheme[3][1]}, ${props.state.colorScheme[3][2]});
           }
           #color5 {

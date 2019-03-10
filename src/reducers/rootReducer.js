@@ -39,13 +39,15 @@ export default (state = initialState, action) => {
 let initialState = {
   primaryColor: {
     hex: 'FFFFFF',
-    name: 'white'
+    name: 'white',
+    font: '000000'
   },
   secondaryColor: {
     hex: 'FFFFFF',
-    name: 'white'
+    name: 'white',
+    font: 'FFFFFF'
   },
-  colorScheme: [[195, 0, 0], [0, 255, 0], [0, 0, 255], [2, 3, 6], [7, 3, 1]],
+  colorScheme: [[195, 0, 0], [0, 255, 0], [0, 0, 255], [178, 255, 253], [250, 248, 50]],
   colorsPicked: false,
 
 }

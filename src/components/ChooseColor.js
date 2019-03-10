@@ -51,27 +51,6 @@ function ChooseColor(props) {
     })
   }
 
-  // function fetchColorScheme() {
-  //   const { dispatch } = props;
-  //   let rgb1 = props.state.primaryColor.rgb;
-  //   let rgb2 = props.state.secondaryColor.rgb;
-  //   let url = 'http://colormind.io/api/';
-  //   let data = {
-  //     model: 'default',
-  //     input: [[rgb1.r, rgb1.g, rgb1.b], [rgb2.r, rgb2.g, rgb2.b], "N", "N", "N"]
-  //   }
-  //   let http = new XMLHttpRequest();
-  //   http.onreadystatechange = function () {
-  //     if (http.readyState === 4 && http.status === 200) {
-  //       let palette = JSON.parse(http.responseText).result;
-  //       console.log(palette)
-  //       dispatch(setColorScheme(palette))
-  //     }
-  //   }
-  //   http.open('POST', url, true)
-  //   http.send(JSON.stringify(data))
-  // }
-
   return (
     <div>
       <style>{`
