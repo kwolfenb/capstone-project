@@ -28,8 +28,8 @@ _Web application takes user input to generate a 5-color scheme and apply it to w
 ### Setup/Installation Instructions
 - _Clone Repository from Github._
 - _Download all packages by typing "npm install" in the terminal._
-- _To check for error type "npm run lint". To have ESLint attempt to fix these automatically type "npm run lint-fix"._
 - _To run the program type "npm run start" and open application in a browser._
+- _If the 'Submit' or 'See Color Scheme' buttons fail to call the API you may need to download a CORS browser extension such as [Moesif Origin & CORS changer](https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc/related?hl=en-US)._
 
 ## Page Layout Design
 
@@ -43,6 +43,7 @@ _Web application takes user input to generate a 5-color scheme and apply it to w
 - _HTML_
 - _CSS / Bootstrap_
 - _JSON_
+
 
 ### License
 
