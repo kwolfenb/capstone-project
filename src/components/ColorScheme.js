@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/ColorScheme.css'
 import { connect } from 'react-redux';
 import { setColorScheme } from './../actions';
+import { randomColors } from './../actions';
 
 
 const mapStateToProps = state => {
