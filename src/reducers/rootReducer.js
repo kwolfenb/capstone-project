@@ -42,15 +42,15 @@ let initialState = {
     name: 'white',
     font: '000000',
     rgb : {
-      r: 0,
-      g: 0,
-      b: 0
+      r: 255,
+      g: 255,
+      b: 255
     }
   },
   secondaryColor: {
-    hex: 'FFFFFF',
-    name: 'white',
-    font: '000000',
+    hex: '000000',
+    name: 'black',
+    font: 'FFFFFF',
     rgb : {
       r: 0,
       g: 0,

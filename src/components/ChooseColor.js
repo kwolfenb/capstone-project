@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './../scripts/jscolor.js';
-import './../scripts/colorPicker.js';
 import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
 import { fontColor } from './../actions';
