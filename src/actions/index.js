@@ -69,5 +69,6 @@ export function fontColor(color) {
 // -d 'models={model}' \
 // -d 'api_user=60460074&api_secret=n3WaKT6vG6pYCUHAKEdE' \
 // -d 'url=https://d3m9459r9kwism.cloudfront.net/img/examples/example7.jpg'
-
+// user email: bejowu@click-mail.net
+// 
 
