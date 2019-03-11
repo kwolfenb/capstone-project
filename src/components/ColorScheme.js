@@ -12,8 +12,6 @@ const mapStateToProps = state => {
 };
 
 
-
-
 function ColorScheme(props) {
 
   function fetchColorScheme(e) {
@@ -42,26 +40,47 @@ function ColorScheme(props) {
     <div className='colorScheme'>
       <style>
         {`
+        
+          .colorScheme {
+            margin-top: 5%;
+          }
+          #colorSchemeButton {
+            margin: 2%;
+            background-color: #DDDDDD;
+            border-radius: 3px;
+            padding: 15px 32px;
+            text-align: center;
+            transition: box-shadow 1s, background-color 0.3s;
+          }
+          #colorSchemeButton:hover {
+            background-color: #EDEDED;
+            box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 4px 4px 0 rgba(0,0,0,0.19);
+          }
+
           #color1 {
             background: rgb(${props.state.colorScheme[0][0]}, ${props.state.colorScheme[0][1]}, ${props.state.colorScheme[0][2]});
+            transition: background 0.6s;
           }
           #color2 {
             background: rgb(${props.state.colorScheme[1][0]}, ${props.state.colorScheme[1][1]}, ${props.state.colorScheme[1][2]});
+            transition: background 0.6s;
           }
           #color3 {
             background: rgb(${props.state.colorScheme[1][0]}, ${props.state.colorScheme[2][1]}, ${props.state.colorScheme[2][2]});
+            transition: background 0.6s;
           }
           #color4 {
             background: rgb(${props.state.colorScheme[3][0]}, ${props.state.colorScheme[3][1]}, ${props.state.colorScheme[3][2]});
+            transition: background 0.6s;
           }
           #color5 {
             background: rgb(${props.state.colorScheme[4][0]}, ${props.state.colorScheme[4][1]}, ${props.state.colorScheme[4][2]});
+            transition: background 0.6s;
           }
         `}
       </style>
-      <h3>Color Scheme works</h3>
       <form onSubmit={fetchColorScheme}>
-        <button type='submit'>See Color Scheme</button>
+        <button id='colorSchemeButton' type='submit'><h2>Generate Color Scheme</h2></button>
       </form>
       <div className='colors'>
         <div id='color1'>

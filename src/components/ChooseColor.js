@@ -5,7 +5,6 @@ import './../scripts/colorPicker.js';
 import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
 import { fontColor } from './../actions';
-// import { setColorScheme } from './../actions';
 
 const mapStateToProps = state => {
   return {
@@ -54,47 +53,90 @@ function ChooseColor(props) {
   return (
     <div>
       <style>{`
-        .primaryColor {
-          text-align: center;
-          background-color: #${props.state.primaryColor.hex};
-          width: 50%;
-          height: 150px;
-          color: #${props.state.primaryColor.font};
 
+        .chooseColorForm {
+          background-color: #EDEDED;
+          border-radius: 6px;
+          padding: 10px;
+          margin: 10px;
+          border: solid white 1px;
+          box-shadow: 1px 1px 3px grey;
+          transition: background-color 0.4s, border 0.4s, box-shadow 0.4s;
+        }
+
+        .chooseColorForm:hover {
+          background-color: #EEEEEE;
+          border: solid #CCFAFF 1px;
+          box-shadow: 4px 4px 4px 3px #AAAAAA;
+        }
+
+        .chooseColorForm input, .chooseColorForm button {
+          margin-top: 20px;
+        }
+
+
+        .chooseColorGrid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-size: 14px;
+        }
+
+        .primaryColor, .secondaryColor {
+          margin: auto;
+          text-align: center;
+          width: 80%;
+          height: 150px;
+          padding-top: 25px;
+          background-color: white;
+          transition: background-color 1s; 
+          border-radius: 3px;
+
+        }
+
+        .primaryColor {
+          background-color: #${props.state.primaryColor.hex};
+          color: #${props.state.primaryColor.font};
         }
         .secondaryColor {
-          text-align: center;
-          height: 150px;
-          width: 50%;
           background-color: #${props.state.secondaryColor.hex};
           color: #${props.state.secondaryColor.font};
-
         }
       `}</style>
-      <h3>Choose Color works</h3>
-      <form onSubmit={handleChooseColor}>
+      <div className='chooseColorForm'>
+        <h3>Choose Color works</h3>
+        <form onSubmit={handleChooseColor}>
 
-        <button className="jscolor {valueElement:'primary-chosen-value'}">
-          Pick text color
-	      </button>
+          <button className="jscolor {valueElement:'primary-chosen-value'}">
+            Pick text color
+          </button>
 
-        HEX value:
-        <input id="primary-chosen-value"
-          ref={(input) => { primaryColor = input; }} /> <br />
+          HEX value:
+          <input id="primary-chosen-value"
+            ref={(input) => { primaryColor = input; }} /> <br />
 
-        <button className="jscolor {valueElement:'secondary-chosen-value'}">
-          Pick text color
-	      </button>
+          <button className="jscolor {valueElement:'secondary-chosen-value'}">
+            Pick text color
+          </button>
 
-        HEX value:
-        <input id="secondary-chosen-value"
-          ref={(input) => { secondaryColor = input; }} /> <br />
-        <button type='submit'>Submit</button>
+          HEX value:
+          <input id="secondary-chosen-value"
+            ref={(input) => { secondaryColor = input; }} /> <br />
+          <button type='submit'>Submit</button>
 
-      </form>
-
-      <p className="primaryColor">Primary Color: {props.state.primaryColor.name}</p>
-      <p className="secondaryColor">Secondary Color: {props.state.secondaryColor.name}</p>
+        </form>
+        <div className='chooseColorGrid'>
+          <div>
+            <p className="primaryColor">Primary Color: <br />
+            <strong>{props.state.primaryColor.name}</strong></p>
+          </div>
+          <div>
+            <p className="secondaryColor">Secondary Color: <br />
+            <strong>{props.state.secondaryColor.name}</strong></p>
+          </div>
+        </div>
+      </div>
     </div>
 
   )

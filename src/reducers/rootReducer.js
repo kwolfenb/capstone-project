@@ -45,9 +45,7 @@ let initialState = {
   secondaryColor: {
     hex: 'FFFFFF',
     name: 'white',
-    font: 'FFFFFF'
+    font: '000000'
   },
-  colorScheme: [[195, 0, 0], [0, 255, 0], [0, 0, 255], [178, 255, 253], [250, 248, 50]],
-  colorsPicked: false,
-
+  colorScheme: [[195, 0, 0], [0, 255, 0], [0, 0, 255], [178, 255, 253], [250, 248, 50]]
 }
