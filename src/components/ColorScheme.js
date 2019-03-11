@@ -40,23 +40,6 @@ function ColorScheme(props) {
     <div className='colorScheme'>
       <style>
         {`
-        
-          .colorScheme {
-            margin-top: 5%;
-          }
-          #colorSchemeButton {
-            margin: 2%;
-            background-color: #DDDDDD;
-            border-radius: 3px;
-            padding: 15px 32px;
-            text-align: center;
-            transition: box-shadow 1s, background-color 0.3s;
-          }
-          #colorSchemeButton:hover {
-            background-color: #EDEDED;
-            box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 4px 4px 0 rgba(0,0,0,0.19);
-          }
-
           #color1 {
             background: rgb(${props.state.colorScheme[0][0]}, ${props.state.colorScheme[0][1]}, ${props.state.colorScheme[0][2]});
             transition: background 0.6s;

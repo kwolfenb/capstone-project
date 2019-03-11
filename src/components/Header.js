@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles/Header.css';
 import { randomColors, fetchColorRgb, fontColor, chooseColor } from './../actions';
 import { connect } from 'react-redux';
+import {   BrowserRouter as Router, Route,  Link } from 'react-router-dom';
 
 
 const mapStateToProps = state => {
@@ -50,21 +51,18 @@ function Header(props) {
         handleRandomColor();
     }
 
-
-
-
     return (
         <div className='header'>
             <h1>Colors Web App</h1>
             <div className='headerButtons'>
                 <div>
-                    <h6>Home</h6>
+                    <Link to='/'><h6>Home</h6></Link>
                 </div>
                 <div>
                     <h6 onClick={handleRandomClick}>Generate Random Colors</h6>
                 </div>
                 <div>
-                    <h6>About</h6>
+                    <h6 onClick={()=>alert('under construction')}>About</h6>
                 </div>
             </div>
         </div>

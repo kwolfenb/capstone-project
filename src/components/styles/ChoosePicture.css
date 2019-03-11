@@ -1,10 +1,33 @@
+.choosePictures {
+    background-color: #EDEDED;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 20px;
+    border: solid white 1px;
+    box-shadow: 1px 1px 3px grey;
+    transition: background-color 0.4s, border 0.4s, box-shadow 0.4s;
+    height: 95%;
+}
+
+.choosePictures:hover {
+  background-color: #EEEEEE;
+  border: solid #CCFAFF 1px;
+  box-shadow: 4px 4px 4px 3px #AAAAAA;
+}
+
 img {
-  object-fit: contain;
-  width: 150px;
+  object-fit: cover;
+  width: 170px;
   height: 100px;
+  margin: 5px;
+}
+
+img:hover {
+  box-shadow: 1px 1px 4px 2px greenyellow;
 }
 
 .pictures {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+

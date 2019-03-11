@@ -14,7 +14,7 @@ import img8 from '../assets/images/img8.jpg';
 function ChoosePicture() {
 
   return (
-    <div>
+    <div className='choosePictures'>
       <h3>Choose A Color Scheme by Picture</h3>
       <div className='pictures'>
         <div>

@@ -11,9 +11,21 @@
   grid-template-columns: 1fr 2fr 1fr;
 }
 
+
 .headerButtons h6 {
   background: gray;
   width: 75%;
   margin: 2px;
   border-radius: 2px;
+  transition: box-shadow 0.2s;
+}
+
+.headerButtons h6:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 4px 1px #C9FC8E;
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
 }

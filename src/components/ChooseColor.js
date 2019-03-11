@@ -5,6 +5,7 @@ import './../scripts/colorPicker.js';
 import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
 import { fontColor } from './../actions';
+import './styles/ChooseColor.css';
 
 const mapStateToProps = state => {
   return {
@@ -51,49 +52,8 @@ function ChooseColor(props) {
   }
 
   return (
-    <div>
+    <div className='chooseColorForm'>
       <style>{`
-
-        .chooseColorForm {
-          background-color: #EDEDED;
-          border-radius: 6px;
-          padding: 10px;
-          margin: 10px;
-          border: solid white 1px;
-          box-shadow: 1px 1px 3px grey;
-          transition: background-color 0.4s, border 0.4s, box-shadow 0.4s;
-        }
-
-        .chooseColorForm:hover {
-          background-color: #EEEEEE;
-          border: solid #CCFAFF 1px;
-          box-shadow: 4px 4px 4px 3px #AAAAAA;
-        }
-
-        .chooseColorForm input, .chooseColorForm button {
-          margin-top: 20px;
-        }
-
-
-        .chooseColorGrid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          margin-top: 20px;
-          margin-bottom: 20px;
-          font-size: 14px;
-        }
-
-        .primaryColor, .secondaryColor {
-          margin: auto;
-          text-align: center;
-          width: 80%;
-          height: 150px;
-          padding-top: 25px;
-          background-color: white;
-          transition: background-color 1s; 
-          border-radius: 3px;
-
-        }
 
         .primaryColor {
           background-color: #${props.state.primaryColor.hex};
@@ -103,8 +63,8 @@ function ChooseColor(props) {
           background-color: #${props.state.secondaryColor.hex};
           color: #${props.state.secondaryColor.font};
         }
+
       `}</style>
-      <div className='chooseColorForm'>
         <h3>Choose Color works</h3>
         <form onSubmit={handleChooseColor}>
 
@@ -128,16 +88,23 @@ function ChooseColor(props) {
         </form>
         <div className='chooseColorGrid'>
           <div>
-            <p className="primaryColor">Primary Color: <br />
-            <strong>{props.state.primaryColor.name}</strong></p>
+            <p className="primaryColor">
+            <span className='colorHeader'>Primary Color: </span><br />
+              Name: <em> {props.state.primaryColor.name}</em><br />
+              Hexidecimal: #{props.state.primaryColor.hex} <br />
+              RGB: ({props.state.primaryColor.rgb.r}, {props.state.primaryColor.rgb.g}, {props.state.primaryColor.rgb.b}) <br />
+            </p>
           </div>
           <div>
-            <p className="secondaryColor">Secondary Color: <br />
-            <strong>{props.state.secondaryColor.name}</strong></p>
+          <p className="secondaryColor">
+              <span className='colorHeader'>Secondary Color: </span><br />
+              Name: <em> {props.state.secondaryColor.name}</em><br />
+              Hexidecimal: #{props.state.secondaryColor.hex} <br />
+              RGB: ({props.state.secondaryColor.rgb.r}, {props.state.secondaryColor.rgb.g}, {props.state.secondaryColor.rgb.b}) <br />
+            </p>
           </div>
         </div>
       </div>
-    </div>
 
   )
 

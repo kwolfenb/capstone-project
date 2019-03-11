@@ -40,12 +40,22 @@ let initialState = {
   primaryColor: {
     hex: 'FFFFFF',
     name: 'white',
-    font: '000000'
+    font: '000000',
+    rgb : {
+      r: 0,
+      g: 0,
+      b: 0
+    }
   },
   secondaryColor: {
     hex: 'FFFFFF',
     name: 'white',
-    font: '000000'
+    font: '000000',
+    rgb : {
+      r: 0,
+      g: 0,
+      b: 0
+    }
   },
   colorScheme: [[195, 0, 0], [0, 255, 0], [0, 0, 255], [178, 255, 253], [250, 248, 50]]
 }
