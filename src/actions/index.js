@@ -64,3 +64,10 @@ export function fontColor(color) {
         }
 }
 
+//note new api 
+//curl -X GET -G 'https://api.sightengine.com/1.0/check.json' \
+// -d 'models={model}' \
+// -d 'api_user=60460074&api_secret=n3WaKT6vG6pYCUHAKEdE' \
+// -d 'url=https://d3m9459r9kwism.cloudfront.net/img/examples/example7.jpg'
+
+
