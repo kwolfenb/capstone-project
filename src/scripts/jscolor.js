@@ -11,7 +11,7 @@
  */
 
 
-// "use strict";
+"use strict";
 
 
 if (!window.jscolor) { window.jscolor = (function () {
@@ -305,7 +305,7 @@ var jsc = {
 			borderRadius: getSupportedProp(['borderRadius', 'MozBorderRadius', 'webkitBorderRadius']),
 			boxShadow: getSupportedProp(['boxShadow', 'MozBoxShadow', 'webkitBoxShadow'])
 		};
-		return function (elm, prop, value=0) {
+		return function (elm, prop, value) {
 			switch (prop.toLowerCase()) {
 			case 'opacity':
 				var alphaOpacity = Math.round(parseFloat(value) * 100);
@@ -320,12 +320,12 @@ var jsc = {
 	})(),
 
 
-	setBorderRadius : function (elm, value = 0) {
+	setBorderRadius : function (elm, value) {
 		jsc.setStyle(elm, 'borderRadius', value || '0');
 	},
 
 
-	setBoxShadow : function (elm, value = 0) {
+	setBoxShadow : function (elm, value) {
 		jsc.setStyle(elm, 'boxShadow', value || 'none');
 	},
 
@@ -1073,8 +1073,7 @@ var jsc = {
 							}
 							this.exportColor(jsc.leaveValue | jsc.leaveStyle);
 						}
-					} 
-					else if (!this.required && /^\s*$/.test(this.valueElement.value)) {
+					} else if (!this.required && /^\s*$/.test(this.valueElement.value)) {
 						this.valueElement.value = '';
 						if (this.styleElement) {
 							this.styleElement.style.backgroundImage = this.styleElement._jscOrigStyle.backgroundImage;

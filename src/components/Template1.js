@@ -72,6 +72,8 @@ function Template1(props) {
         text-align: center;
         background-color: ${color5};
         border: solid ${color1};
+        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        letter-spacing: 1px;
       }
 
       #back:hover {
@@ -90,8 +92,8 @@ function Template1(props) {
       <div className="templateHeader">
         <a href="#" className="logo">Webpage Header</a>
         <div className="header-right">
-          <a className="active" href="#">Home</a>
-          <a href="#">Contact</a>
+          <Link to='/'>Home</Link>
+          <a className='active' href="#">Contact</a>
           <a href="#">About</a>
         </div>
       </div>

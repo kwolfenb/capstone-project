@@ -18,7 +18,6 @@ export const setColorScheme = (colorScheme) => ({
 })
 
 export function fetchColorName(hexCode) {
-    console.log(hexCode);
     return fetch(`http://thecolorapi.com/id?hex=${hexCode}`)
         .then(response => response.json(),
             error => console.log('An error occurred', error))

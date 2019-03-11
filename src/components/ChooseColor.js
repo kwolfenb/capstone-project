@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './../scripts/jscolor.js';
 import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
 import { fontColor } from './../actions';
 import './styles/ChooseColor.css';
+import './../scripts/jscolor.js';
 
 const mapStateToProps = state => {
   return {
@@ -14,23 +14,29 @@ const mapStateToProps = state => {
 
 
 function ChooseColor(props) {
-  let primaryColor;
-  let secondaryColor;
-  // let colorScheme;
+
+
+  let primaryColor=props.state.primaryColor.hex;
+  let secondaryColor=props.state.secondaryColor.hex;
+  console.log(primaryColor, secondaryColor)
 
   function handleChooseColor(event) {
     const { dispatch } = props;
     event.preventDefault();
-    let colors = [primaryColor.value, secondaryColor.value]
-    let promises = [];
-    for (let c of colors) {
-      let promise = new Promise(
-        (resolve, reject) => {
-          let result = fetchColorName(c)
-          resolve(result);
-        });
-      promises.push(promise);
-    }
+    if(primaryColor.value=='' || secondaryColor.value=='') {
+      console.log('blank')
+    } else {
+
+      let colors = [primaryColor.value, secondaryColor.value]
+      let promises = [];
+      for (let c of colors) {
+        let promise = new Promise(
+          (resolve, reject) => {
+            let result = fetchColorName(c)
+            resolve(result);
+          });
+          promises.push(promise);
+        }
 
     Promise.all(promises).then((color) => {
       if (color[0] && color[1]) {
@@ -49,8 +55,10 @@ function ChooseColor(props) {
       }
     })
   }
+  }
 
   return (
+    
     <div className='chooseColorForm'>
       <style>{`
 
@@ -64,23 +72,18 @@ function ChooseColor(props) {
         }
 
       `}</style>
+
         <h3>Choose Color works</h3>
         <form onSubmit={handleChooseColor}>
 
-          <button className="jscolor {valueElement:'primary-chosen-value'}">
-            Pick text color
-          </button>
-
-          HEX value:
+          Primary Color:
           <input id="primary-chosen-value"
+            className="jscolor"
             ref={(input) => { primaryColor = input; }} /> <br />
 
-          <button className="jscolor {valueElement:'secondary-chosen-value'}">
-            Pick text color
-          </button>
-
-          HEX value:
+          Secondary Color:
           <input id="secondary-chosen-value"
+          className="jscolor"
             ref={(input) => { secondaryColor = input; }} /> <br />
           <button type='submit'>Submit</button>
 
