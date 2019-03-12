@@ -15,10 +15,8 @@ const mapStateToProps = state => {
 
 function ChooseColor(props) {
 
-
   let primaryColor=props.state.primaryColor.hex;
   let secondaryColor=props.state.secondaryColor.hex;
-  console.log(primaryColor, secondaryColor)
 
   function handleChooseColor(event) {
     const { dispatch } = props;

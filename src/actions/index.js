@@ -64,14 +64,12 @@ export function fontColor(color) {
 }
 
 export function fetchColorByPicture(link) {
-    return fetch(`https://api.sightengine.com/1.0/check.json?models=properties&api_user=${user}&api_secret=${api_key}&url=${link}`)
+    return fetch(`https://api.sightengine.com/1.0/check.json?models=properties&api_user=${process.env.REACT_APP_API_USER}&api_secret=${process.env.REACT_APP_API_KEY}&url=${link}`)
+    .then(response => response.json(),
+        error => console.log('An error occurred', error))
+    .then(function(json) {
+        if(json) {
+            return(json);
+        }
+    })
 }
-
-//note new api 
-//curl -X GET -G 'https://api.sightengine.com/1.0/check.json' \
-// -d 'models={model}' \
-// -d 'api_user=60460074&api_secret=n3WaKT6vG6pYCUHAKEdE' \
-// -d 'url=https://d3m9459r9kwism.cloudfront.net/img/examples/example7.jpg'
-// user email: bejowu@click-mail.net
-// 
-

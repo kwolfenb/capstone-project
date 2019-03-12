@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {   BrowserRouter as Router, Route,  Link } from 'react-router-dom';
 import './styles/Template.css';
+import { fontColor } from './../actions';
 
 const mapStateToProps = state => {
   return {
@@ -20,6 +21,10 @@ function Template1(props) {
   let fontColor2 = `#${props.state.secondaryColor.font}`;
   let lighterColor1 = `rgba(${props.state.colorScheme[0][0]}, ${props.state.colorScheme[0][1]}, ${props.state.colorScheme[0][2]}, 0.25)`;
   let lighterColor2 = `rgba(${props.state.colorScheme[1][0]}, ${props.state.colorScheme[1][1]}, ${props.state.colorScheme[1][2]}, 0.25)`;
+
+  // function determineFontColor(color) {
+  //   return fontColor(color)
+  // }
 
   return (
     <div className='template'>
