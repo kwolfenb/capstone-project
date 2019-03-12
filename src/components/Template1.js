@@ -19,13 +19,14 @@ function Template1(props) {
   let fontColor1 = `#${props.state.primaryColor.font}`;
   let fontColor2 = `#${props.state.secondaryColor.font}`;
   let lighterColor1 = `rgba(${props.state.colorScheme[0][0]}, ${props.state.colorScheme[0][1]}, ${props.state.colorScheme[0][2]}, 0.25)`;
+  let lighterColor2 = `rgba(${props.state.colorScheme[1][0]}, ${props.state.colorScheme[1][1]}, ${props.state.colorScheme[1][2]}, 0.25)`;
 
   return (
     <div className='template'>
       <style>{`
 
       body { 
-        background-color: ${lighterColor1};
+        background-color: ${lighterColor2};
       }
       .templateHeader {
         background-color: ${color1};
@@ -70,7 +71,7 @@ function Template1(props) {
 
       #back {
         text-align: center;
-        background-color: ${color5};
+        background-color: ${color3};
         border: solid ${color1};
         text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
         letter-spacing: 1px;
@@ -110,7 +111,7 @@ function Template1(props) {
           <a href='#'>Other</a>
         </div>
         <div className='bodyContent'>
-          <h3 id='back'><Link to='/'>Click to Go Back</Link></h3>
+        <Link to='/'><h3 id='back'>Click to Go Back</h3></Link>
           <div className='grid'>
             <div className='gridContent'>
               <h4>Page Content</h4>

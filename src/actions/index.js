@@ -41,7 +41,6 @@ export function randomColors() {
 
 
 export function fetchColorRgb(rgb) {
-    console.log(rgb);
     return fetch(`http://thecolorapi.com/id?rgb=rgb${rgb}`)
         .then(response => response.json(),
             error => console.log('An error occurred', error))
@@ -62,6 +61,10 @@ export function fontColor(color) {
         } else {
             return '000000';
         }
+}
+
+export function fetchColorByPicture(link) {
+    return fetch(`https://api.sightengine.com/1.0/check.json?models=properties&api_user=${user}&api_secret=${api_key}&url=${link}`)
 }
 
 //note new api 

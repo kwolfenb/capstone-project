@@ -4,12 +4,18 @@ import ChooseColor from './ChooseColor';
 import ChoosePicture from './ChoosePicture';
 import ColorScheme from './ColorScheme';
 import Templates from './Templates';
-
 import './styles/Body.css';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-function Body() {
+var loadjs = require('loadjs');
 
+class Body extends React.Component {
+
+
+
+  render() {
+
+  
   return (
     <div>
       <Header />
@@ -26,12 +32,12 @@ function Body() {
         <ColorScheme />
       </div>
       <div>
-        <h2>Templates go here</h2>
         <Templates />
       </div>
     </div >
   )
 
+}
 }
 
 export default Body;

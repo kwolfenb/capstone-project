@@ -14,8 +14,7 @@
 "use strict";
 
 
-if (!window.jscolor) { window.jscolor = (function () {
-
+window.jscolor = (function () {
 
 var jsc = {
 
@@ -1856,4 +1855,4 @@ jsc.register();
 return jsc.jscolor;
 
 
-})(); }
+})(); 

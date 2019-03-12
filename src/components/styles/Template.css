@@ -3,6 +3,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
+.templatesGrid {
+  background: #EEEEEE;
+  width: 80%;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.templatePreview {
+  height: 50px;
+}
+
 .templates h2, .templates a {
   color: black;
 }
@@ -33,7 +44,7 @@ body {
   
 .sidenav {
     float: left;
-    height: 500px;
+    height: 800px;
     width: 140px;
     z-index: 1;
     top: 0;
@@ -59,13 +70,26 @@ body {
     border-radius: 4px;
   }
 
+
 .grid {
     display: grid;
     grid-template-columns: 3fr 3fr;
+    padding-left: 3%;
   }
 
 .gridContent {
-    padding: 5px;
-    width: 75%;
-    margin-left: 10px;
+    padding: 30px;
+    width: 80%;
+  }
+
+  .templates {
+    text-align: center;
+    background-color: #DDDDDD;
+    padding-top: 20px;
+  }
+
+  .templatesGrid {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+
   }
