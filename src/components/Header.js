@@ -53,7 +53,7 @@ function Header(props) {
 
     return (
         <div className='header'>
-            <h1>Colors Web App</h1>
+            <h1>Color Schemes Web App</h1>
             <div className='headerButtons'>
                 <div>
                     <Link to='/'><h6>Home</h6></Link>

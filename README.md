@@ -1,4 +1,4 @@
-# _Color Design React_
+# _Color Schemes React_
 
 #### _Capstone Project for Epicodus - 3/1/2019_
 
