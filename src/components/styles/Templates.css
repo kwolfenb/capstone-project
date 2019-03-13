@@ -1,0 +1,10 @@
+.templateImg {
+    height: 200px;
+    width: auto;
+    transition: 0.5s;
+}
+
+.templateImg:hover {
+    transform: translateY(-5px) scale(1.05);
+
+}

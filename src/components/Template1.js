@@ -92,6 +92,14 @@ function Template1(props) {
 
       .gridContent {
         background-color: ${color2};
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px ${color1};
+        transition: 0.5s;
+      }
+
+      .gridContent:hover {
+        background-color: ${color4};
+        box-shadow: 2px 2px 8px 4px ${color1};
       }
     `}
       </style>
