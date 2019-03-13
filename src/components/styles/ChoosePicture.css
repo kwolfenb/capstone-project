@@ -17,9 +17,9 @@
 
 img {
   object-fit: cover;
-  width: 170px;
-  height: 100px;
-  margin: 5px;
+  width: 150px;
+  height: 90px;
+  margin: 4px;
 }
 
 img:hover {
@@ -28,6 +28,6 @@ img:hover {
 
 .pictures {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 

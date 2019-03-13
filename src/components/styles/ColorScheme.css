@@ -10,6 +10,9 @@
   padding: 15px 32px;
   text-align: center;
   transition: box-shadow 1s, background-color 0.3s;
+  width: 270px;
+  height: 110px;
+
 }
 
 #colorSchemeButton:hover {

@@ -4,7 +4,6 @@ import { chooseColor } from './../actions';
 import { fetchColorName } from './../actions';
 import { fontColor } from './../actions';
 import './styles/ChooseColor.css';
-import './../scripts/jscolor.js';
 
 const mapStateToProps = state => {
   return {
@@ -71,7 +70,7 @@ function ChooseColor(props) {
 
       `}</style>
 
-        <h3>Choose Color works</h3>
+        <h3>Choose 2 Colors</h3>
         <form onSubmit={handleChooseColor}>
 
           Primary Color:

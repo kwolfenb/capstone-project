@@ -7,20 +7,21 @@ import Templates from './Templates';
 import './styles/Body.css';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-var loadjs = require('loadjs');
+import { colorPicker } from './../actions/jscolor.js';
+
 
 class Body extends React.Component {
 
-
+  componentWillMount() {
+    colorPicker();
+  }
 
   render() {
-
   
   return (
     <div>
       <Header />
       <div>
-
         <div className='bodyRow'>
           <div className='bodyCol'>
             <ChooseColor />

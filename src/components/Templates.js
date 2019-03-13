@@ -18,6 +18,7 @@ function Templates() {
             <div className='templatePreview'>
             </div>
             </div>
+
         </div>
     )
 }
