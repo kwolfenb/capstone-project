@@ -11,7 +11,7 @@ function Templates() {
                 <h2><Link to='/template1'>Template 1</Link></h2>
             </div>
             <div>
-                <h2 onClick={ () => alert('under construction')}>Template 2</h2>
+            <h2><Link to='/template2'>Template 2</Link></h2>
             </div>
             <div className='templatePreview'>
             </div>

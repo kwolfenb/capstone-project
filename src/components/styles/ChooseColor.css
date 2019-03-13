@@ -6,7 +6,7 @@
     border: solid white 1px;
     box-shadow: 1px 1px 3px grey;
     transition: background-color 0.4s, border 0.4s, box-shadow 0.4s;
-    height: 95%;
+    height: 550px;
   }
 
   .chooseColorForm:hover {

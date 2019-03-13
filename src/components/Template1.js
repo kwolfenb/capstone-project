@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {   BrowserRouter as Router, Route,  Link } from 'react-router-dom';
-import './styles/Template.css';
+import './styles/Template1.css';
 import { fontColor } from './../actions';
 
 const mapStateToProps = state => {

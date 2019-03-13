@@ -85,7 +85,7 @@ class ColorScheme extends React.Component {
       </style>
       <form onSubmit={this.fetchColorScheme}>
         <button id='colorSchemeButton' type='submit'>
-          {this.state.loading ? <Loading /> :  <h2>Generate Color Scheme</h2>}
+          {this.state.loading ? <Loading /> :  <h4>Generate Scheme By Selected Colors</h4>}
           </button>
       </form>
       <div className='colors'>

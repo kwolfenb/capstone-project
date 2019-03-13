@@ -2,6 +2,8 @@ import React from 'react';
 import './styles/ChoosePicture.css';
 import { fetchColorByPicture, setColorScheme } from './../actions';
 import { connect } from 'react-redux';
+import Loading from './Loading';
+
 
 import img1 from '../assets/images/img1.jpg';
 import img2 from '../assets/images/img2.jpg';
@@ -35,32 +37,39 @@ class ChoosePicture extends React.Component {
   imgUrl;
 
   fetchPictureColors(link) {
-    const { dispatch } = this.props;
+    if(link=='') {
+      alert('You must first enter an image URL')
+    } else {
+
+      const { dispatch } = this.props;
+      this.setLoading();
       let promise = new Promise(
         (resolve, reject) => {
-            let result = fetchColorByPicture(link)
-            resolve(result);
-          });
-    promise.then((colors) => {
-        console.log(colors.colors);
-        let color1 = colors.colors.dominant;
-        let accent1=colors.colors.accent[0];
-        let color3 = colors.colors.other[0];
-        let color4 = colors.colors.other[1];
-        let color5 = colors.colors.other[2];
-
-        let result = 
+          let result = fetchColorByPicture(link)
+          resolve(result);
+        });
+        promise.then((colors) => {
+          console.log(colors.colors);
+          let color1 = colors.colors.dominant;
+          let accent1=colors.colors.accent[0];
+          let color3 = colors.colors.other[0];
+          let color4 = colors.colors.other[1];
+          let color5 = colors.colors.other[2];
+          
+          let result = 
           [[color1.r, color1.g, color1.b], 
           [accent1.r, accent1.g, accent1.b],
           [color3.r, color3.g, color3.b],
           [color4.r, color4.g, color5.b], 
           [color5.r, color5.g, color5.b]];
           dispatch(setColorScheme(result));
-    })
+          this.setLoading();
+        })
+      }
 }
 
   handlePictureClick(link) {
-    this.fetchPictureColors(link);
+    this.imgUrl.value=link;
   }
 
   setLoading() {
@@ -73,7 +82,8 @@ class ChoosePicture extends React.Component {
 
   
   return (
-    <div className='choosePictures'>
+    <div>
+      <div className='choosePictures'>
       <h3>Choose A Picture</h3>
       <div className='pictures'>
         <div>
@@ -105,12 +115,17 @@ class ChoosePicture extends React.Component {
         </div>
 
       </div>
-      <div>
+      <div className='pictureSubmit'>
         <h5>Or manually enter an image URL</h5>
         <form>
-          <input type='text' ref={(input) => { this.imgUrl = input; }}/>
-          <button type='button' onClick={()=>this.handlePictureClick(this.imgUrl.value)}>Submit</button>
+          <input type='text' ref={(input) => { this.imgUrl = input; }}/><br />
         </form>
+      </div>
+      </div>
+      <div>
+        <button className='pictureSubmitButton' type='button' onClick={()=>this.fetchPictureColors(this.imgUrl.value)}>
+          {this.state.loading ? <Loading /> : <h4>Generate Scheme By Picture</h4>}
+          </button>
       </div>
     </div>
   )

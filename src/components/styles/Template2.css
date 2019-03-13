@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Karma");
+
+body.template2,h1.template2,h2.template2,h3.template2,h4.template2,h5.template2,h6.template2 {
+    font-family: "Karma", sans-serif
+}
+.w3-bar-block .w3-bar-item {
+    padding:20px
+}

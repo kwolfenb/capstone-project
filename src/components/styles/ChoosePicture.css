@@ -6,7 +6,7 @@
     border: solid white 1px;
     box-shadow: 1px 1px 3px grey;
     transition: background-color 0.4s, border 0.4s, box-shadow 0.4s;
-    height: 95%;
+    height: 550px;
 }
 
 .choosePictures:hover {
@@ -31,3 +31,23 @@ img:hover {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.pictureSubmitButton {
+  margin: 2%;
+  background-color: #DDDDDD;
+  border-radius: 3px;
+  padding: 15px 32px;
+  text-align: center;
+  transition: box-shadow 1s, background-color 0.3s;
+  width: 270px;
+  height: 110px;
+}
+
+.pictureSubmitButton:hover {
+  background-color: #EDEDED;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 4px 4px 0 rgba(0,0,0,0.19);
+}
+
+.pictureSubmit input {
+  height: 25px;
+  width: 400px;
+}

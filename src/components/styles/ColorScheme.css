@@ -1,10 +1,12 @@
 .colorScheme {
-  text-align: center;
   margin-top: 5%;
 }
 
+
 #colorSchemeButton {
-  margin: 2%;
+  margin-left: 8%;
+  margin-bottom: 2%;
+  margin-top: 2%;
   background-color: #DDDDDD;
   border-radius: 3px;
   padding: 15px 32px;
@@ -12,7 +14,6 @@
   transition: box-shadow 1s, background-color 0.3s;
   width: 270px;
   height: 110px;
-
 }
 
 #colorSchemeButton:hover {
