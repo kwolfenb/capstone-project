@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "bafd310ea46d39591303",
+    "revision": "2490953cd1e43725000d",
     "url": "/colors-generator-react/static/css/main.72b284b3.chunk.css"
   },
   {
-    "revision": "bafd310ea46d39591303",
-    "url": "/colors-generator-react/static/js/main.bafd310e.chunk.js"
+    "revision": "2490953cd1e43725000d",
+    "url": "/colors-generator-react/static/js/main.2490953c.chunk.js"
   },
   {
     "revision": "548e9f603f9d2fd9c218",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "url": "/colors-generator-react/static/media/template2.3be36292.png"
   },
   {
-    "revision": "1101e0482d1e2d921f450d66fa5c6c3a",
+    "revision": "a061ce11205ff539238496de6d68e194",
     "url": "/colors-generator-react/index.html"
   }
 ];
